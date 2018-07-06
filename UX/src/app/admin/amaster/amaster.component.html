@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['aregisteration']" >Admin Dashboard</a>
+      </li> -->
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Admin Dashboard</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLink]="['Dashboard']" >Dashboard</a>
+          <a class="dropdown-item" [routerLink]="['CompanyDetail']" href="#">Company Detail</a>
+          <a class="dropdown-item" [routerLink]="['CompanyList']" href="#">Company List</a>
+        </div>
+      </li>
+      <!-- routerLink="./CompanyDetail" -->
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Customer</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Add Cusomer</a>
+          <a class="dropdown-item" [routerLink]="['CustomerList']"  href="#">Customer List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Employee</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Add Employee</a>
+          <a class="dropdown-item" href="#">Employee List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Supplier</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Add Supplier</a>
+          <a class="dropdown-item" href="#">Supplier List</a>
+        </div>
+      </li>
+     
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Product</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Add Product</a>
+          <a class="dropdown-item" href="#">Product List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Purchase</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Purchase Detail</a>
+          <a class="dropdown-item" href="#">Purchase List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Sales</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Sale Detail</a>
+          <a class="dropdown-item" href="#">Purchase List</a>
+        </div>
+      </li>
+    </ul>
+    <span class="navbar-text">
+        <label  style="color:white">Welcome  </label>    <label  style="color:rgb(185, 231, 18)">{{currentUser}} </label>  
+        <button class="btn btn-outline-danger btn-sm" (click)="logout()" type="submit">Logout</button> 
+      </span>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

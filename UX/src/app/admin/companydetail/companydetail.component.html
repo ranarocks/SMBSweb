@@ -1,0 +1,161 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <form #NgForm="ngForm" (ngSubmit)="register(model)">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="CompanyName">
+                                <span class="req">* </span> Company Name: </label>
+                            <input class="form-control" type="text"  name="CompanyName"  displayName="Company Name" #CompanyName="ngModel"  id="txtCompanyName"
+                                [(ngModel)]="model.Name" required/>
+                            <app-show-errors [control]="CompanyName"  ></app-show-errors>
+
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="CompanyName">
+                                <span class="req">* </span> Website: </label>
+                            <input class="form-control" type="text" name="Website" [(ngModel)]="model.Website" #Website="ngModel" id="txtWebsite" ngModel required/>
+                            <app-show-errors [control]="Website" ></app-show-errors>
+                        </div>
+                    </div>
+              <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="Registration">
+                                <span class="req">* </span> Registration No.: </label>
+                            <input class="form-control" type="text" name="Registration" [(ngModel)]="model.RegistrationNo" #Registration="ngModel" id="txtRegistration" 
+                            ngModel required/>
+                            <app-show-errors [control]="Registration"></app-show-errors>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="pan">
+                                <span class="req">* </span> PAN : </label>
+                            <input class="form-control" type="text" name="Pan" id="txtPan" [(ngModel)]="model.PAN" #Pan="ngModel" ngModel required/>
+                            <app-show-errors [control]="Pan"></app-show-errors>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="CompanyCode">
+                                <span class="req">* </span> Company Code.: </label>
+                            <input class="form-control" type="text" name="CompanyCode" [(ngModel)]="model.Code" #CompanyCode="ngModel" id="txtCompanyCode" 
+                            ngModel required/>
+                            <app-show-errors [control]="CompanyCode"></app-show-errors>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="fax">
+                                <span class="req">* </span> FAX : </label>
+                            <input class="form-control" type="text" name="Fax" id="txtFax" [(ngModel)]="model.Fax" #Fax="ngModel" ngModel required/>
+                            <app-show-errors [control]="Fax"></app-show-errors>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="GSTNo">
+                                <span class="req">* </span> GST No : </label>
+                            <input class="form-control" type="text" name="GSTNo" id="txtGSTNo" [(ngModel)]="model.GSTN" #GSTNo="ngModel" ngModel required/>
+                            <app-show-errors [control]="GSTNo"></app-show-errors>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="Address">
+                                <span class="req">* </span> Address : </label>
+                            <input class="form-control" type="text" name="Address" id="txtAddress" [(ngModel)]="model.Address" #Address="ngModel" ngModel required/>
+                            <app-show-errors [control]="Address"></app-show-errors>
+                        </div>
+                    </div>
+                  
+                    <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="City">
+                                <span class="req">* </span> City : </label>
+                            <input class="form-control" type="text" name="City" id="txtCity" [(ngModel)]="model.City" #City="ngModel" ngModel required/>
+                            <app-show-errors [control]="City"></app-show-errors>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-6  col-md-12 col-sm-12">
+                                    <label for="State">
+                                        <span class="req">* </span> State : </label>
+                                    <select class="form-control" name="statelist"  ngModel  [(ngModel)]="model.StateId">
+                                        <option *ngFor="let state of stateList" value="{{state.Id}}">
+                                            {{state.Name}}
+                                        </option>
+                                    </select>
+                                   
+                                </div>
+                                <div class="col-lg-6  col-md-12 col-sm-12">
+                                    <label for="PinCode">
+                                        <span class="req">* </span> Pin Code : </label>
+                                        <input class="form-control" type="text" name="PinCode" [(ngModel)]="model.Zip" id="txtPinCode" #PinCode="ngModel" ngModel required/>
+                                        <app-show-errors [control]="PinCode"></app-show-errors>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                                <label for="Email">
+                                        <span class="req">* </span>    Email : </label>
+                                        <input class="form-control" type="email" name="Email" [(ngModel)]="model.Email" id="txtEmail" #Email="ngModel"  ngModel  required appEmailFormatValidator/>
+                                        <app-show-errors [control]="Email"></app-show-errors>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12">
+                            <div class="row">
+                                
+                                <div class="col-lg-6  col-md-12 col-sm-12">
+                                        <label for="Contact">
+                                                <span class="req">* </span> Contact Number : </label>
+                                            <input class="form-control" type="text" name="Contact" [(ngModel)]="model.ContactNum" id="txtContact" #Contact="ngModel" ngModel required />
+                                            <app-show-errors [control]="Contact"></app-show-errors>
+                                </div>
+                                <div class="col-lg-6  col-md-12 col-sm-12">
+                                        <label for="AltContact">
+                                            Alternate Contact Number : </label>
+                                        <input class="form-control" type="text" name="AltContact" [(ngModel)]="model.AlternateContactNo" id="txtAltContact" #AltContact="ngModel" ngModel />
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-lg-6  col-md-12 col-sm-12">
+                                <label>
+                                    Description 1 : </label>
+                                <textarea class="form-control" rows="3" name="Description1" [(ngModel)]="model.Description1" id="txtDescription1" #Description1="ngModel" 
+                                ngModel></textarea>
+                                <div id="errDescription"></div>
+                            </div>
+                            <div class="col-lg-6  col-md-12 col-sm-12">
+                                <label for="Description2">
+                                    Description 2 : </label>
+                                <textarea class="form-control" rows="3" name="txtDescription2" [(ngModel)]="model.Description2" id="txtDescription2" #Description2="ngModel" 
+                                ngModel></textarea>
+                                <div id="errDescription2"></div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-lg-6  col-md-12 col-sm-12">
+                                <label>
+                                    Logo </label>
+                                    <input type="file" (change)="onFileChanged($event)" placeholder="Upload image..." /><br/>
+                                    <img [src]="model.Logo"  alt="Preivew" style="width: 250px; height: 80px"> 
+                            </div>
+                            <div class="col-lg-6  col-md-12 col-sm-12">
+                                <label for="TermsAndConditions">
+                                 Terms and Conditions : </label>
+                                <textarea class="form-control" rows="3" name="txtTermsAndConditions" [(ngModel)]="model.TermsConditions" id="txtTermsAndConditions" #TermsAndConditions="ngModel" 
+                                ngModel></textarea>
+                                
+                            </div>
+                        </div> 
+                        <div class="row float-right">
+                            <div class="col-lg-12 col-sm-12 col-md-12 ">
+                                <button type="submit" [disabled]="NgForm.invalid || NgForm.pending" class="btn btn-outline-success">Submit</button>
+                            </div>
+                        </div>
+
+                </fieldset>
+            </form>
+            <!-- ends register form -->
+            </div>
+        </div>
