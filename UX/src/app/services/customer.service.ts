@@ -13,7 +13,6 @@ export class CustomerService {
   }
 
   GetCustomerList(type, active){
-
     let Params = new HttpParams();
     Params = Params.append('type',type);
     Params = Params.append('active',active);
