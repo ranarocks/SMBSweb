@@ -34,7 +34,8 @@ export class CompanydetailComponent implements OnInit {
       modeldata.Logo=  modeldata.Logo.split(",")[1];
     }
     
-    this._companyService.CreateCompany(modeldata).subscribe(data => {
+    this._companyService.CreateCompany(modeldata).subscribe(tes => {
+      const data :any = tes;
       if (data && data.StatusCode==1) {
         modeldata.Logo = this.img + modeldata.Logo;
         alert(data.Messages[0]);
@@ -57,7 +58,8 @@ export class CompanydetailComponent implements OnInit {
   }
 
   GetCompanyProfile(){
-    this._companyService.GetCompanyProfile().subscribe(data => {
+    this._companyService.GetCompanyProfile().subscribe(tes => {
+      const data :any = tes;
       if (data) {
         if (data.StatusCode === 1) {
           this.model= Object.assign({}, data.Obj)

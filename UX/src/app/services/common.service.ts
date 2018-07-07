@@ -8,6 +8,13 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class CommonService {
 apiUrl:string;
+// apiMapper: object = 
+// { 
+//   StatusCode :Number,
+//   Messages:[],
+//   List:[],
+//   Obj:{}
+// };
   constructor(private http:HttpClient) { }
 
   GetAllStates(){

@@ -13,7 +13,7 @@ using System.Data;
 namespace SBMSservices.Controllers
 {
     /// <summary>
-    /// 
+    /// this is cutomer method
     /// </summary>
     [RoutePrefix("Customer")]
     public class CustomerController : ApiController   

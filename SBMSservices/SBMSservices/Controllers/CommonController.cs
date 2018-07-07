@@ -23,7 +23,7 @@ namespace SBMSservices.Controllers
         }
         // GET api/<controller>
         [Route("GetAllStates")]
-        [HttpPost]
+        [HttpGet]
         public async Task<ServiceResponse<StateModel>> GetAllStates() {
             var objSR = new ServiceResponse<StateModel>();
             List<StateModel> objList = new List<StateModel>();
