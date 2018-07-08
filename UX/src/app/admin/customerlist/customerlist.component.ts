@@ -12,9 +12,8 @@ import { GridOptions } from "ag-grid";
 })
 export class CustomerlistComponent implements OnInit {
   private gridOptions: GridOptions;
-
+customerList=[];
    constructor(private _customerService:CustomerService, private _common: CommonService, private router: Router) {
-     
     this.gridOptions = <GridOptions>{
       onGridReady: () => {
         this.gridOptions.api.sizeColumnsToFit();
@@ -62,13 +61,26 @@ export class CustomerlistComponent implements OnInit {
         width: 100
       }
     ];
-    this.gridOptions.rowData = [
-      { Id: 5, CustomerCode: 10 },
-      { Id: 10, CustomerCode: 15 },
-      { Id: 15, CustomerCode: 20 }
-    ]
+    this.createRowData();
+   // this.gridOptions.rowData = this.createRowData();
   }
-
+  private createRowData() {
+    debugger;
+    const rowData: any[] = []; 
+    this._customerService.GetCustomerList(1,1).subscribe(apidata=>{
+      const data :any = apidata;
+      //this.customerList=data.List;
+      if(data.List.length>=0){
+        for (let i = 0; i < data.List.length; i++) {
+          rowData.push({
+            Id:data.List[i].Id,
+            CustomerCode:data.List[i].CustomerCode
+          });
+        }
+      }
+      this.gridOptions.rowData =rowData;
+     });
+  }
   ngOnInit() {
   }
 
