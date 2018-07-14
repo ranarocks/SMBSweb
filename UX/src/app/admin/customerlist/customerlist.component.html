@@ -1,2 +1,20 @@
-<ag-grid-angular style="width: 100%; height: 200px;" class="ag-theme-balham"    [gridOptions]="gridOptions" enableSorting="true" enableFilter="true">
-</ag-grid-angular>
+<!-- <ag-grid-angular style="width: 100%; height: 200px;" class="ag-theme-balham"    [gridOptions]="gridOptions" enableSorting="true" enableFilter="true">
+</ag-grid-angular> -->
+<table class="table table-striped">
+    <thead >
+     
+        <th *ngFor="let names of gridheaderNames">{{names}}</th>
+   
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of rowData">
+                <td><a [routerLink]="" (click)="navigate(data.Id);">{{data.CustomerCode}}</a> </td>
+                <td>{{data.FullName}}</td>
+                <td>{{data.Gender}}</td>
+                <td>{{data.MobileNo}}</td>
+                <td>{{data.Email}}</td>
+                <td>{{data.FullAddress}}</td>
+               
+        </tr>
+    </tbody>
+</table>

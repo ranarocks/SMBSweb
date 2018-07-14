@@ -13,7 +13,7 @@ using System.Net.Http.Headers;
 
 namespace SBMSservices.Controllers
 {
-  // [Authorize]
+   [Authorize]
    [RoutePrefix("common")]
     public class CommonController : ApiController
     {

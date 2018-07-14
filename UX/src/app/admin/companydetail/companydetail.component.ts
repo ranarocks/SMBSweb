@@ -29,7 +29,6 @@ export class CompanydetailComponent implements OnInit {
   }
  
   register(modeldata){
-    debugger
     if(modeldata.Logo!=null){
       modeldata.Logo=  modeldata.Logo.split(",")[1];
     }
@@ -43,9 +42,7 @@ export class CompanydetailComponent implements OnInit {
     },
       error => {
         alert(error);
-
       });
-  
   }
 
   onFileChanged(event) {

@@ -13,11 +13,14 @@ export class CustomerService {
 
   }
 
-  GetCustomerList(type, active){
-    let Params = new HttpParams();
-    Params = Params.append('type',type);
-    Params = Params.append('active',active);
-    return this._http.get(environment.apiUrl+"Customer/GetCustomerList",{params:Params});
+  GetCustomerList(model){
+    // let Params = new HttpParams();
+    // Params = Params.append('type',type);
+    // Params = Params.append('id',id);
+    return this._http.post(environment.apiUrl+"Customer/GetCustomerList",model);
   }
 
+  CreateCustomer(data){
+    return this._http.post(environment.apiUrl + 'Customer/CustomerOperation', data);
+  }
 }
