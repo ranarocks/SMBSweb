@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
 import { CanActivate } from "@angular/router";
 import {AgGridModule} from "ag-grid-angular/main";
@@ -37,6 +38,8 @@ import { ShowErrorsComponent } from './common/show-errors/show-errors.component'
 import { CustomerlistComponent } from './admin/customerlist/customerlist.component';
 import { CustomerService } from './services/customer.service';
 
+import { CustomerdetailsComponent } from './admin/customerdetails/customerdetails.component';
+
 
 
 // , canActivate: [AuthGuard]
@@ -57,7 +60,8 @@ import { CustomerService } from './services/customer.service';
     ShowErrorsComponent,
     EmailFormatValidatorDirective,
     CompanyListComponent,
-    CustomerlistComponent
+    CustomerlistComponent,
+    CustomerdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,7 @@ import { CustomerService } from './services/customer.service';
     BrowserAnimationsModule,
     ROUTING,
     HttpClientModule,
+    ReactiveFormsModule, 
     AgGridModule.withComponents(
       []
   )

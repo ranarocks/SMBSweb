@@ -15,6 +15,9 @@ namespace SBMSservices.Controllers
     /// <summary>
     /// this is cutomer method
     /// </summary>
+    /// 
+
+    [Authorize]
     [RoutePrefix("Customer")]
     public class CustomerController : ApiController   
     {
@@ -24,19 +27,15 @@ namespace SBMSservices.Controllers
             bal = new CustomerBAL();
         }
 
-
         [Route("GetCustomerList")]
-        [HttpGet]
-        public async Task<ServiceResponse<CustomerModel>> GetCustomerList(int type, Int16 active)
+        [HttpPost]
+        public async Task<ServiceResponse<CustomerModel>> GetCustomerList(CustomerModel CM)
         {
-            CustomerModel CM = new CustomerModel();
             DataTable dt;
             var objSR = new ServiceResponse<CustomerModel>();
             List<CustomerModel> objList = new List<CustomerModel>();
             try
             {
-                    CM.type = type;
-                    CM.Active = active;
                     objSR.List = bal.LoadGrid(CM).AsEnumerable().Select(row=>new CustomerModel() {
                     Id= row["Id"] == DBNull.Value ? 0 : Convert.ToInt32(row["Id"]),
                     CustomerCode = row["CustomerCode"] == DBNull.Value ? string.Empty : Convert.ToString(row["CustomerCode"]),
@@ -50,7 +49,7 @@ namespace SBMSservices.Controllers
                     Gender  = row["Gender"] == DBNull.Value ? string.Empty : Convert.ToString(row["Gender"]),
                     LastName = row["LastName"] == DBNull.Value ? string.Empty : Convert.ToString(row["LastName"]),
                     GSTN = row["GSTN"] == DBNull.Value ? string.Empty : Convert.ToString(row["GSTN"]),
-                    MaritalStatus = row["MaritalStatus"] == DBNull.Value ? string.Empty : Convert.ToString(row["GSTN"]),
+                    MaritalStatus = row["MaritalStatus"] == DBNull.Value ? string.Empty : Convert.ToString(row["MaritalStatus"]),
                     MobileNo = row["MobileNo"] == DBNull.Value ? string.Empty : Convert.ToString(row["MobileNo"]),
                     PAN = row["PAN"] == DBNull.Value ? string.Empty : Convert.ToString(row["PAN"]),
                     StateId = row["StateId"] == DBNull.Value ? 0 : Convert.ToInt32(row["StateId"]),
@@ -61,6 +60,33 @@ namespace SBMSservices.Controllers
                 }).ToList();
 
                 objSR.StatusCode = 1;
+            }
+            catch (Exception ex)
+            {
+                objSR.StatusCode = 2;
+                objSR.Messages.Add("Error occurred while login, " + ex.Message);
+            }
+            return await Task.Run(() => objSR);
+        }
+
+        [Route("CustomerOperation")]
+        public async Task<ServiceResponse<string>> CustomerOperation(CustomerModel Model)
+        {
+            var objSR = new ServiceResponse<string>();
+            CustomerModel CM = new CustomerModel();
+            try
+            {
+                int result = bal.CustomerOperation(Model);
+                if (result > 0)
+                {
+                    objSR.StatusCode = 1;
+                    objSR.Messages.Add(Model.FirstName + " is succesfully saved as Customer.");
+                }
+                else
+                {
+                    objSR.StatusCode = 2;
+                    objSR.Messages.Add("There is some issue while saving the Customer.");
+                }
             }
             catch (Exception ex)
             {

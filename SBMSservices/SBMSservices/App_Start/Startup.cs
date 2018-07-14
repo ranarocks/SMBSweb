@@ -16,7 +16,7 @@ namespace SBMSservices
             {
                 TokenEndpointPath = new PathString("/token"),
                 Provider = new OAuthProvider(),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(10),
+                AccessTokenExpireTimeSpan = TimeSpan.FromSeconds(30),
                 AllowInsecureHttp = true
             };
         }

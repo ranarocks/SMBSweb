@@ -1,0 +1,172 @@
+<form novalidate [formGroup]="customerForm"  (ngSubmit)="submitForm()">
+    <fieldset>
+           
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="FirstName">
+                    <span class="req">* </span> First Name : </label>
+                <input class="form-control" type="text"  formControlName="firstname"  displayName="First Name" id="txtfirstName"
+                     required/>
+             
+
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="LastName">
+                    <span class="req">* </span> Last Name : </label>
+                <input class="form-control" type="text" formControlName="lastname"  displayName="Last Name" id="txtlastName"  
+                required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="CustomerCode">
+                    <span class="req">* </span> Customer Code : </label>
+                <input class="form-control" type="text"  formControlName="customercode"  displayName="Customer Code" id="txtcustomercode"
+                     required/>
+             
+
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="DataOfBirth">
+                    <span class="req">* </span> Date Of Birth : </label>
+                    <input type="date" name="dataofbirth"  formControlName="dataofbirth" min="1000-01-01" class="form-control">
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="MaritialStatus">
+                    <span class="req">* </span> Maritial Status : </label>
+                    <select class="form-control"  formControlName="maritalstatus" >
+                            <option *ngFor="let type of MaritialStatuskeys" value="{{type}}">
+                                {{type}}
+                            </option>
+                        </select>
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="email">
+                    <span class="req">* </span> Email : </label>
+                    <input class="form-control" type="text"  formControlName="email"  displayName="email" id="txtemail"
+                    required/>
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="MobNo">
+                    <span class="req">* </span> Mobile Number : </label>
+                    <input class="form-control" type="text"  formControlName="mobileno"  displayName="mobileno" id="txtmobileno"
+                    required/>
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                    <label for="Aadhar">
+                            <span class="req">* </span> Aadhar : </label>
+                        <input class="form-control" type="text" name="Aadhar" formControlName="aadhar" id="txtAadhar"  required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="MobNo">
+                    <span class="req">* </span> Address : </label>
+                    <input class="form-control" type="text"  formControlName="address"  displayName="Address" id="txtAddress"
+                    required/>
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="City">
+                    <span class="req">* </span> City : </label>
+                    <input class="form-control" type="text"  formControlName="city"  displayName="City" 
+                    id="City"
+                    required/>
+            </div>
+        </div>
+
+        <div class="row">
+         
+            <div class="col-lg-12  col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-6  col-md-12 col-sm-12">
+                        <label for="State">
+                            <span class="req">* </span> State : </label>
+                            <select class="form-control" name="statelist"   formControlName="state">
+                                    <option *ngFor="let state of stateList" value="{{state.Id}}">
+                                        {{state.Name}}
+                                    </option>
+                                </select>
+                       
+                    </div>
+                    <div class="col-lg-6  col-md-12 col-sm-12">
+                        <label for="PinCode">
+                            <span class="req">* </span> Pin Code : </label>
+                            <input class="form-control" type="text" name="PinCode"  formControlName="zip" id="txtPinCode"  required/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="pan">
+                    <span class="req">* </span> PAN : </label>
+                    <input class="form-control" type="text"  formControlName="pan"  displayName="pan" id="pan"
+                    required/>
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="gstn">
+                    <span class="req">* </span> GST No : </label>
+                    <input class="form-control" type="text"  formControlName="gstn"  displayName="gstn" 
+                    id="gstn"
+                    required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="pan">
+                    <span class="req">* </span> Visit Count : </label>
+                    <input class="form-control" type="text"  formControlName="visitcount"  displayName="visitcount" id="visitcount"
+                    required/>
+            </div>
+            <div class="col-lg-6  col-md-12 col-sm-12">
+                <label for="active">
+                    <span class="req">* </span> Active : </label>
+                    <select class="form-control" name="statelist"  formControlName="active" >
+                            <option *ngFor="let type of activeType" value="{{type.key}}">
+                                {{type.value}}
+                            </option>
+                        </select>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-6  col-md-12 col-sm-12">
+                    <label for="Gender">
+                        <span class="req">* </span> Gender : </label>
+                        <div >
+                            <label>Male
+                                <input type="radio" name="gender" formControlName="gender" value="Male" /></label>
+                                <label>Female
+                                <input type="radio" name="gender" formControlName="gender" value="Female" /></label>
+                                <!-- <label *ngFor="let type of GenderList; let idx = index"><span>{{type}}</span>
+                                     <input type="radio" name="gender" formControlName="gender" value="type" />
+                                </label> -->
+                            </div>
+                </div>
+                <div class="col-lg-6  col-md-12 col-sm-12">
+                    <label for="active">
+                        <span class="req">* </span> First Visit : </label>
+                        <input class="form-control" type="text"  formControlName="firstvisit"  displayName="firstvisit" id="firstvisit"
+                    required/>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-6  col-md-12 col-sm-12">
+                            <label for="active">
+                                <span class="req">* </span> Last Visit : </label>
+                                <input class="form-control" type="text"  formControlName="lastvisit"  displayName="lastvisit" id="lastvisit"
+                            required/>
+                        </div>
+                        <div class="col-lg-6  col-md-12 col-sm-12 pull-right">
+                                <button type="submit"  class="btn btn-outline-success">Submit</button>
+                            </div>
+            </div>
+      
+        </fieldset>
+</form>

@@ -23,7 +23,7 @@
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Customer</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
-          <a class="dropdown-item" href="#">Add Cusomer</a>
+          <a class="dropdown-item" [routerLink]="['Customerdetails']"  href="#">Add Cusomer</a>
           <a class="dropdown-item" [routerLink]="['CustomerList']"  href="#">Customer List</a>
         </div>
       </li>

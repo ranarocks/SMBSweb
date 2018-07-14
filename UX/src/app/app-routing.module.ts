@@ -17,6 +17,7 @@ import { CompanyListComponent } from './admin/company-list/company-list.componen
 import { BankaccountdetailComponent } from './admin/bankaccountdetail/bankaccountdetail.component';
 import { AdmindetailComponent } from './admin/admindetail/admindetail.component';
 import { CustomerlistComponent } from './admin/customerlist/customerlist.component';
+import { CustomerdetailsComponent } from './admin/customerdetails/customerdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AuthGuard } from './auth.guard'
 
@@ -34,6 +35,7 @@ export const AppRoutes: Routes =[
       { path: 'CompanyDetail', component: CompanydetailComponent },
       { path: 'CompanyList', component: CompanyListComponent },
       { path: 'CustomerList', component: CustomerlistComponent },
+      { path: 'Customerdetails', component: CustomerdetailsComponent },
       // {
       //   path: 'dashboardmaster', component: DashboardmasterComponent, data: { title: 'Admin Dashboard Views' },
       //   children: [
