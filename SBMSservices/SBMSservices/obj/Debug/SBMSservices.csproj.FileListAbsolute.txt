@@ -122,3 +122,9 @@ D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\SBMS.Utilities.pdb
 D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\obj\Debug\SBMSservices.csprojResolveAssemblyReference.cache
 D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\obj\Debug\SBMSservices.dll
 D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\obj\Debug\SBMSservices.pdb
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\Microsoft.Web.Infrastructure.dll
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\Swashbuckle.Core.dll
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\WebActivatorEx.dll
+D:\Imp\Learn\SMBSweb\SBMSservices\SBMSservices\bin\System.IdentityModel.Tokens.Jwt.xml

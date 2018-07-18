@@ -21,6 +21,12 @@ namespace SBMSservices.Controllers
         public CommonController() {
             _AdminBL = new AdminBL();
         }
+
+        [Route("getdata")]
+        [HttpGet]
+        public string getdata() {
+            return "test";
+        }
         // GET api/<controller>
         [Route("GetAllStates")]
         [HttpGet]

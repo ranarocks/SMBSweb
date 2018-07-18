@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost/SBMSservices/'
+  apiUrl: 'http://ranarocks.azurewebsites.net/'
 };
