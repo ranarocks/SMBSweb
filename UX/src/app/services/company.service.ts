@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import { environment } from '../../environments/environment';
+//import { environment } from '../../environments/environment';
 
 @Injectable()
 export class CompanyService {
@@ -13,10 +13,10 @@ export class CompanyService {
   }
 
   GetCompanyProfile(){
-    return this._http.get(environment.apiUrl+"company/GetCompanyProfile");
+    return this._http.get('http://ranarocks.azurewebsites.net/'+"company/GetCompanyProfile");
   }
 
   CreateCompany(data){
-    return this._http.post(environment.apiUrl + 'company/create', data);
+    return this._http.post('http://ranarocks.azurewebsites.net/' + 'company/create', data);
   }
 }

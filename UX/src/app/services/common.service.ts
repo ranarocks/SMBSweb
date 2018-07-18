@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-import { environment } from '../../environments/environment';
+//import { environment } from '../../environments/environment';
 
 @Injectable()
 export class CommonService {
@@ -18,6 +18,6 @@ apiUrl:string;
   constructor(private http:HttpClient) { }
 
   GetAllStates(){
-    return this.http.get(environment.apiUrl+"common/GetAllStates");
+    return this.http.get('http://ranarocks.azurewebsites.net/'+"common/GetAllStates");
   }
 }
