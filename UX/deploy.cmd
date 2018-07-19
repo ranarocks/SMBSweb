@@ -92,7 +92,7 @@ echo Handling node.js deployment.
 call :SelectNodeVersion
  
 :: 2. Install npm packages
-IF EXIST "%DEPLOYMENT_SOURCE%\package.json" (
+IF EXIST "%DEPLOYMENT_SOURCE%\UX\package.json" (
   pushd "%DEPLOYMENT_SOURCE%"
   call :ExecuteCmd !NPM_CMD! install
   IF !ERRORLEVEL! NEQ 0 goto error
@@ -109,7 +109,7 @@ popd
 )
  
 :: 4. Copy Web.config
-IF EXIST "%DEPLOYMENT_SOURCE%\web.config" (
+IF EXIST "%DEPLOYMENT_SOURCE%\UX\web.config" (
   pushd "%DEPLOYMENT_SOURCE%"
  :: the next line is optional to fix 404 error see section #8
   call :ExecuteCmd cp web.config dist\
@@ -119,7 +119,7 @@ IF EXIST "%DEPLOYMENT_SOURCE%\web.config" (
  
 :: 5. KuduSync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
-  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%/dist" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
+  call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_SOURCE%/UX/dist" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
