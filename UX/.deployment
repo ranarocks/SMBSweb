@@ -1,2 +1,2 @@
 [config]
-command = deploy.cmd+'/UX'
+command = deploy.cmd
