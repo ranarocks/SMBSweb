@@ -22,12 +22,7 @@ namespace SBMSservices.Controllers
             _AdminBL = new AdminBL();
         }
 
-        [Route("getdata")]
-        [HttpGet]
-        public string getdata() {
-            return "test";
-        }
-        // GET api/<controller>
+                // GET api/<controller>
         [Route("GetAllStates")]
         [HttpGet]
         public async Task<ServiceResponse<StateModel>> GetAllStates() {

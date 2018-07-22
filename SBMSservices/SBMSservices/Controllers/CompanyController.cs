@@ -13,7 +13,7 @@ using SBMSservices.Services;
 
 namespace SBMSservices.Controllers
 {
-    [Authorize]
+   [Authorize]
     [RoutePrefix("company")]
     public class CompanyController : ApiController
     {
